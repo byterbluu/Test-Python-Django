@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}My Porfile - Blog Personal{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+
+<main class="main-profile">
+    <section class="profile">
+        <div class="profile-img">
+            <img src="{% static 'img/profile-pic.jpg' %}" alt="">
+        </div>    
+        <div class="profile-info">
+            <h2>Hola, mi nombre es Jose Pina</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Molestias esse, qui nisi deserunt animi earum ad rerum 
+                modi sunt explicabo minus atque dolorem officia officiis 
+                laudantium consequuntur perferendis nesciunt possimus.
+            </p>
+        </div>           
+    </section>
+    <section class="project-container">
+        <h3>Proyectos</h3>
+        {% for project in projects %}
+        <div class="project">
+            <h4>{{ project.title }}</h4>
+            <p>
+                {{ project.desc }}
+            </p>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock %}
